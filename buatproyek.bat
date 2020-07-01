@@ -37,4 +37,7 @@ GOTO menu
 :mulaiproject
 move signapk.bat "%FOLDER_NAME%"  && move appbuilder.bat "%FOLDER_NAME%"
 cd "%FOLDER_NAME%" && call appbuilder.bat
-GOTO menu
+GOTO exit
+
+:exit
+ECHO PROJECT TELAH DIBUAT!
