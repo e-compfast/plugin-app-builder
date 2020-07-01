@@ -58,16 +58,19 @@ ECHO 	 + MERILIS OUTPUT APLIKASI SIAP UPLOAD
 ECHO.	===========================================================
 zipalign -v 4 app-release-unsigned.apk app-release1.0.0.apk
 ECHO.
-goto buat
+goto exit
 
 :upd
 SET "jwb="
 SET /p jwb= + Ingin update perubahan aplikasi ? (ya/tidak)
 IF /i "%jwb%" equ "ya" goto backfolder
 IF /i "%jwb%" equ "y" goto backfolder
-IF /i "%jwb%" equ "t" goto buat 
-IF /i "%jwb%" equ "tidak" goto buat
-goto buat
+IF /i "%jwb%" equ "t" goto exit
+IF /i "%jwb%" equ "tidak" goto exit
+goto exit
+
+:exit
+ECHO + SELESAI !
 
 :backfolder
 cd ..
