@@ -11,7 +11,7 @@ ECHO.
 ECHO.
 
 ECHO.	===========================================================
-ECHO  	 	Jalankan program dibawah ini secara berturut-turut:
+ECHO  	  Jalankan program dibawah ini secara berturut-turut:
 ECHO.	===========================================================
 ECHO.
 ECHO  	[a] Membuat Project Aplikasi
@@ -26,22 +26,21 @@ ECHO.
 ECHO  	[h] Update Test Aplikasi
 ECHO  	[i] Update Rilis Aplikasi
 
-
 ECHO.
 ECHO.	===========================================================
 
-ECHO.
-ECHO.
+rem ECHO.
+rem ECHO.
 
-ECHO.	===========================================================
-ECHO  	 Silahkan pilih platform yang kamu inginkan :
-ECHO.	===========================================================
-ECHO.
-ECHO  	[1] Android
-ECHO  	[2] IOS
-ECHO  	[3] Web
-ECHO.
-ECHO.	===========================================================
+rem ECHO.	===========================================================
+rem ECHO  	 Silahkan pilih platform yang kamu inginkan :
+rem ECHO.	===========================================================
+rem ECHO.
+rem ECHO  	[1] Android
+rem ECHO  	[2] IOS
+rem ECHO  	[3] Web
+rem ECHO.
+rem ECHO.	===========================================================
 
 ECHO.
 ECHO.
@@ -52,7 +51,7 @@ SET "program="
 SET /p program= + Masukan pilihan program/platform kamu :
 ECHO.
 
-rem IF "%program%" equ "a" goto projectApp
+IF "%program%" equ "a" call buatproyek.bat
 IF "%program%" equ "b" goto appID
 IF "%program%" equ "c" goto appName
 IF "%program%" equ "d" goto addPlatform
@@ -63,9 +62,9 @@ IF "%program%" equ "g" goto persiapanupload
 IF "%program%" equ "h" goto updapptest
 IF "%program%" equ "i" goto updapprilis
 
-IF "%program%" == 1 cordova platform add android
-IF "%program%" == 2 cordova platform add ios
-IF "%program%" == 3 cordova platform add browser
+rem IF "%program%" == 1 cordova platform add android
+rem IF "%program%" == 2 cordova platform add ios
+rem IF "%program%" == 3 cordova platform add browser
 
 ECHO.
 ECHO + Pilihan Yang Anda Masukan Salah. Silahkan Ulangi Kembali.
@@ -73,18 +72,15 @@ ECHO.
 PAUSE
 GOTO appbuilder
 
-rem :projectApp
-rem cordova create masterchess com.masterchess.app masterchessApp
-rem move signapk.bat masterchess
-rem move appbuilder.bat masterchess && cd masterchess && appbuilder
-rem GOTO appbuilder
+SET APP_NAME=Master Chess Indonesia
+SET APP_ID=ca-app-pub-3821963146527465~9690679929
 
 :appID
-cordova plugin add cordova-plugin-admobpro --save --variable ADMOB_APP_ID="ca-app-pub-3821963146527465~9690679929"
+cordova plugin add cordova-plugin-admobpro --save --variable ADMOB_APP_ID="%APP_ID%"
 GOTO appbuilder
 
 :appName
-cordova plugin add cordova-plugin-app-name --variable APP_NAME="Master Chess Indonesia"
+cordova plugin add cordova-plugin-app-name --variable APP_NAME="%APP_NAME%"
 GOTO appbuilder
 
 :addPlatform
