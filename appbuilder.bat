@@ -51,7 +51,7 @@ SET "program="
 SET /p program= + Masukan pilihan program/platform kamu :
 ECHO.
 
-IF "%program%" equ "a" call buatproyek.bat
+IF "%program%" equ "a" cd .. && call buatproyek.bat
 IF "%program%" equ "b" goto appID
 IF "%program%" equ "c" goto appName
 IF "%program%" equ "d" goto addPlatform
