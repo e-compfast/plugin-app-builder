@@ -72,14 +72,13 @@ ECHO.
 PAUSE
 GOTO appbuilder
 
-SET APP_NAME=Master Chess Indonesia
-SET APP_ID=ca-app-pub-3821963146527465~9690679929
-
 :appID
+SET APP_ID=ca-app-pub-3821963146527465~9690679929
 cordova plugin add cordova-plugin-admobpro --save --variable ADMOB_APP_ID="%APP_ID%"
 GOTO appbuilder
 
 :appName
+SET APP_NAME=Master Chess Indonesia
 cordova plugin add cordova-plugin-app-name --variable APP_NAME="%APP_NAME%"
 GOTO appbuilder
 
