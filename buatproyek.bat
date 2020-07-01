@@ -13,7 +13,7 @@ ECHO.	===========================================================
 
 ECHO.
 ECHO.
-ECHO Membuat Project Aplikasi
+ECHO + Membuat Project Aplikasi
 ECHO.
 
 SET FOLDER_NAME=masterchess
