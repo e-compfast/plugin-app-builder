@@ -18,7 +18,7 @@ ECHO.
 
 SET FOLDER_NAME=masterchess
 SET PACKAGE_NAME=com.masterchess.app
-SET PROJECT_NAME=com.masterchess.app
+SET PROJECT_NAME=masterchessApp
 
 :menu 
 SET "pilihanmenu="
